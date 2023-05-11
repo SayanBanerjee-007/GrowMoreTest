@@ -1,0 +1,135 @@
+/* While Not Logged In ------------------------------------------------------- */
+main > h1 {
+  text-align: center;
+  color: white;
+  font-size: 3rem;
+  font-size: min(3rem, 10cqi);
+  margin-top: 3rem;
+}
+
+/* While Logged In ------------------------------------------------------- */
+/* Create Task Section -------------------------- */
+main > .create-task {
+  color: white;
+  display: flex;
+  position: relative;
+}
+main > .create-task > div {
+  margin-inline: 3rem;
+  padding: 1rem;
+  margin-block: 1.5rem;
+  background: radial-gradient(circle, #4b6cb7 10%, #182848 90%);
+  aspect-ratio: 1/1 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+  border-radius: var(--primary-border-radius);
+}
+main > .create-task > div:hover {
+  background-image: radial-gradient(circle, #1648bb 10%, #091632 90%);
+}
+.create-task > div > p {
+  text-align: center;
+}
+
+/* Task Value Popup -----------------------------  */
+main > dialog {
+  color: white;
+  background: hsl(255, 93%, 72%, 0.95);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 250px;
+  padding: 1rem;
+}
+main > dialog::backdrop {
+  background-color: hsl(0, 0%, 0%, 0.6);
+}
+dialog > p {
+  margin-bottom: 0.5rem;
+}
+main > dialog > form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+dialog > form > textarea {
+  resize: none;
+  grid-column: span 2;
+}
+dialog > form > input[type="button"],
+dialog > form > input[type="submit"] {
+  cursor: pointer;
+  border-radius: var(--primary-border-radius);
+  padding: 0.2rem;
+  outline: none;
+  border: none;
+}
+dialog > form > input[type="submit"]:hover {
+  box-shadow: 0 0 0.5rem black;
+}
+/* Display Task Section -------------------------- */
+main > .display-task > p:first-child {
+  text-decoration: underline dashed;
+  font-weight: 900;
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+}
+.display-task > P:nth-child(2){
+  font-weight: 900;
+  color: white;
+  text-align: center;
+  font-size: 1rem;
+}
+main > .display-task > .task-area {
+  padding: 3rem;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(4, 1fr);
+}
+.task-area > .task {
+  background-image: radial-gradient(circle, #8819a3 53%, #0e0821 100%);
+  color: white;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  border-radius: var(--primary-border-radius);
+}
+.task > p {
+  font-size: larger;
+  grid-column: span 2;
+  text-align: center;
+  word-break: break-all;
+}
+.task > button {
+  cursor: pointer;
+  border-radius: var(--primary-border-radius);
+  padding: 0.2rem;
+  outline: none;
+  border: none;
+}
+.task > button:hover {
+  box-shadow: 0 0 1rem white;
+}
+/* Media Queries ============================================= */
+@media screen and (max-width: 900px) {
+  main > .create-task {
+    justify-content: center;
+  }
+  main > .display-task > .task-area {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 500px) {
+  main > .create-task > div {
+    margin-inline: auto;
+  }
+  main > .display-task > .task-area {
+    padding: 1rem;
+    grid-template-columns: 1fr;
+  }
+}
